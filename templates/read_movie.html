@@ -1,0 +1,22 @@
+{% extends 'templates.html' %}
+{% block content %}
+        <form action="{{ url_for('update') }}" method='post'>
+            <fieldset>
+            <input type="hidden" name="id" value="{{ movie.id }}">
+            <div class="form-group">
+                <label for="title">Título</label>
+                <p>{{ movie.title }}</p>
+            </div>
+            <div class="form-group">
+                <label for="year">Ano de Lançamento</label>
+                <p>{{ movie.year }}</p>
+            </div>
+            <div class="form-group">
+                <label for="sinopsis">Sinopse</label>
+                <p>{{ movie.sinopsis }}</p>
+            </div>
+            </fieldset>
+        </form>
+        <td><a href="{{ url_for('index') }}" type="button" class="btn btn-primary">Voltar</a></td>
+
+{% endblock %}
